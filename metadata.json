@@ -1,0 +1,6 @@
+{
+  "name": "Portfolio Professionnel & Espace Recruteur",
+  "description": "Portfolio professionnel interactif avec accueil, projets, compétences, parcours, CV inversé et interface de téléchargement PDF personnalisable pour les recruteurs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

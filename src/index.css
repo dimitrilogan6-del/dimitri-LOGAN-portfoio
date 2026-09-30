@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Cabinet Grotesk', 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Print Styles for flawless A4 Recruiter PDF Export */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm;
+  }
+
+  html, body {
+    background: #ffffff !important;
+    color: #111827 !important;
+    font-size: 11pt !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Hide entire interactive UI, headers, banners, tabs, buttons */
+  .no-print, header, nav, footer, .floating-actions, .recruiter-toolbar, .print-hidden {
+    display: none !important;
+  }
+
+  /* Show only print-specific CV container */
+  .print-only-cv {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #ffffff !important;
+    color: #111827 !important;
+  }
+
+  .print-only-cv * {
+    color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .page-break {
+    page-break-before: always;
+    break-before: page;
+  }
+
+  .avoid-break {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}
